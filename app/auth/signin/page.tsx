@@ -6,6 +6,8 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/auth-options"
 
 import { SignInButton } from "./components/signin-button"
 
+export const runtime = "edge"
+
 export default async function SignInPage() {
   const session = await getServerSession(authOptions)
 
