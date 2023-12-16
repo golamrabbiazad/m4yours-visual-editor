@@ -1,12 +1,9 @@
 import Link from "next/link"
-import { getServerSession } from "next-auth"
 
-import { authOptions } from "./api/auth/[...nextauth]/auth-options"
-
-export const runtime = "edge"
+import { auth } from "./api/auth/[...nextauth]/auth"
 
 export default async function Home() {
-  const session = await getServerSession(authOptions)
+  const session = await auth()
 
   return (
     <div>

@@ -1,9 +1,9 @@
 import { redirect } from "next/navigation"
-import { getServerSession } from "next-auth"
+import NextAuth from "next-auth"
 
 import "@/lib/markdown-editor/themes/lexical.css"
 
-import { authOptions } from "../api/auth/[...nextauth]/auth-options"
+import { authOptions } from "../api/auth/[...nextauth]/auth.config"
 import { EditorNav } from "./components/editor-nav"
 import { EditorContextProvider } from "./context/editor-context"
 
@@ -12,7 +12,7 @@ export default async function EditorLayout({
 }: {
   children: React.ReactNode
 }) {
-  const session = await getServerSession(authOptions)
+  const session = await NextAuth(authOptions).auth()
 
   if (!session) {
     return redirect("/auth/signin")

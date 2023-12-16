@@ -1,24 +1,14 @@
 import { redirect } from "next/navigation"
-import { getServerSession } from "next-auth/next"
-import { getProviders } from "next-auth/react"
 
-import { authOptions } from "@/app/api/auth/[...nextauth]/auth-options"
+import { auth } from "@/app/api/auth/[...nextauth]/auth"
 
 import { SignInButton } from "./components/signin-button"
 
-export const runtime = "edge"
-
 export default async function SignInPage() {
-  const session = await getServerSession(authOptions)
+  const session = await auth()
 
   if (session && session.user!.name) {
     return redirect("/editor")
-  }
-
-  const providers = await getProviders()
-
-  if (!providers) {
-    return "providers not found!"
   }
 
   return (
@@ -28,7 +18,7 @@ export default async function SignInPage() {
           <h1 className="text-2xl font-semibold tracking-tight">Sign In</h1>
         </div>
 
-        <SignInButton providers={providers} />
+        <SignInButton />
       </div>
     </div>
   )
