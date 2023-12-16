@@ -1,0 +1,24 @@
+version: "3.8"
+
+name: m4yours
+
+services:
+  db:
+    image: bitnami/mysql:latest
+    container_name: m4yours-db
+    restart: always
+    environment:
+      MYSQL_ROOT_USER: dev
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: m4yours
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+    volumes:
+      - m4yours-data:/bitnami/mysql/data
+    ports:
+      - 3306:3306
+volumes:
+  m4yours-data:
+    driver: local
