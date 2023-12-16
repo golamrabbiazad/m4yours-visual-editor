@@ -2,6 +2,8 @@ import Link from "next/link"
 
 import { auth } from "./api/auth/[...nextauth]/auth"
 
+export const runtime = "edge"
+
 export default async function Home() {
   const session = await auth()
 
