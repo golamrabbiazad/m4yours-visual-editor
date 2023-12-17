@@ -16,13 +16,13 @@ export function ToggleSideBars() {
     <>
       <li>
         <PanelLeft
-          className="cursor-pointer"
+          className="cursor-pointer text-[#a1a1a1]"
           onClick={() => setToggleWidget(!toggleWidget)}
         />
       </li>
       <li>
         <PanelRight
-          className="cursor-pointer"
+          className="cursor-pointer text-[#a1a1a1]"
           onClick={() => setToggleRightSideBar(!toggleRightSideBar)}
         />
       </li>
