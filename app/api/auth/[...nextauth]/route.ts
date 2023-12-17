@@ -1,2 +1,2 @@
 export { GET, POST } from "./auth"
-export const runtime = "node"
+export const runtime = "nodejs"
