@@ -1,7 +1,10 @@
 import Link from "next/link"
-import { LogIn } from "lucide-react"
 
-export default function Home() {
+import { AuthenticationButton } from "./components/authentication-button"
+
+export const runtime = "edge"
+
+export default async function Home() {
   return (
     <div>
       <header className="absolute inset-x-0 top-0 z-50">
@@ -14,15 +17,7 @@ export default function Home() {
               <h1 className="text-xl font-bold">M4yours Editor</h1>
             </Link>
           </div>
-
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <Link
-              href="/auth/signin"
-              className="flex items-center gap-2 text-sm font-semibold leading-6 text-white"
-            >
-              Log in <LogIn className="h-4 w-4" />
-            </Link>
-          </div>
+          <AuthenticationButton />
         </nav>
       </header>
 
