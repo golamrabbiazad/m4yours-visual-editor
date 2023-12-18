@@ -25,11 +25,10 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-switch": "^1.0.3",
     "@tailwindcss/typography": "^0.5.10",
-    "bcrypt": "^5.1.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "cmdk": "^0.2.0",
-    "lucide-react": "^0.294.0",
+    "lucide-react": "^0.298.0",
     "million": "latest",
     "next": "^14.0.4",
     "next-auth": "^5.0.0-beta.4",
@@ -44,12 +43,11 @@
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
     "@lexical/react": "^0.12.5",
-    "@types/bcrypt": "^5.0.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@typescript-eslint/parser": "^6.14.0",
-    "autoprefixer": "^10.0.1",
+    "autoprefixer": "^10",
     "dotenv": "^16.3.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
@@ -60,7 +58,7 @@
     "postcss": "^8",
     "prettier": "^3.1.1",
     "prisma": "^5.7.0",
-    "tailwindcss": "^3.3.0",
+    "tailwindcss": "^3",
     "typescript": "^5"
   }
 }

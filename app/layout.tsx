@@ -5,7 +5,6 @@ import type { Metadata } from "next"
 import { fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 
-import AuthProvider from "./auth/provider"
 import { ThemeProvider } from "./components/theme-provider"
 
 export const metadata: Metadata = {
@@ -20,23 +19,21 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <AuthProvider>
-      <html lang="en" suppressHydrationWarning>
-        <body
-          className={cn(
-            "min-h-screen bg-background font-sans antialiased",
-            fontSans.variable
-          )}
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable
+        )}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          disableTransitionOnChange
         >
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
-        </body>
-      </html>
-    </AuthProvider>
+          {children}
+        </ThemeProvider>
+      </body>
+    </html>
   )
 }
