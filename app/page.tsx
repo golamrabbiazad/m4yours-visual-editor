@@ -4,7 +4,7 @@ import { AuthenticationButton } from "./components/authentication-button"
 
 export const runtime = "edge"
 
-export default async function Home() {
+export default function Home() {
   return (
     <div>
       <header className="absolute inset-x-0 top-0 z-50">
