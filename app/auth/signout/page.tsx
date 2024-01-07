@@ -1,4 +1,7 @@
-import { SignOutButton } from "./components/signout-button"
+import { signOut } from "@/app/api/auth/[...nextauth]/auth"
+import { Button } from "@/app/components/ui/button"
+
+export const runtime = "edge"
 
 export default function SignOutPage() {
   return (
@@ -7,8 +10,16 @@ export default function SignOutPage() {
         <div className="flex flex-col space-y-2 text-center">
           <h1 className="text-2xl font-semibold tracking-tight">Sign Out</h1>
         </div>
-
-        <SignOutButton />
+        <form
+          action={async () => {
+            "use server"
+            await signOut()
+          }}
+        >
+          <Button className="w-full" variant="default" type="submit">
+            Sign Out
+          </Button>
+        </form>
       </div>
     </div>
   )

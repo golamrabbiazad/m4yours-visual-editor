@@ -1,18 +1,11 @@
+"use client"
+
 import { useState } from "react"
 import { ChevronDown, ChevronUp } from "lucide-react"
 
 import { SearchBarWithCommand } from "../../../components/search-bar"
 import { Separator } from "../../../components/ui/separator"
 import { useEditorContext } from "../../context/editor-context"
-import {
-  BoxComponent,
-  ButtonComponent,
-  ColumnsComponent,
-  HeroComponent,
-  ImageComponent,
-  SectionComponent,
-} from "../basic-components"
-import { DraggableItem } from "../draggable-item"
 
 export default function WidgetPanel() {
   const { toggleWidget } = useEditorContext()
@@ -46,24 +39,7 @@ export default function WidgetPanel() {
               </div>
               {toggleMyComponents && (
                 <div className="flex flex-row flex-wrap justify-start gap-2">
-                  <DraggableItem type="HERO" label="Hero">
-                    <HeroComponent />
-                  </DraggableItem>
-                  <DraggableItem type="BUTTON" label="Button">
-                    <ButtonComponent />
-                  </DraggableItem>
-                  <DraggableItem type="IMAGE" label="Image">
-                    <ImageComponent />
-                  </DraggableItem>
-                  <DraggableItem type="COLUMN" label="Column">
-                    <ColumnsComponent />
-                  </DraggableItem>
-                  <DraggableItem type="BOX" label="Box">
-                    <BoxComponent />
-                  </DraggableItem>
-                  <DraggableItem type="SECTION" label="Section">
-                    <SectionComponent />
-                  </DraggableItem>
+                  <h1>My Components</h1>
                 </div>
               )}
             </div>
@@ -89,12 +65,7 @@ export default function WidgetPanel() {
               </div>
               {toggleBasicComponents && (
                 <div className="flex flex-row flex-wrap justify-start gap-2">
-                  <HeroComponent />
-                  <ImageComponent />
-                  <ButtonComponent />
-                  <ColumnsComponent />
-                  <BoxComponent />
-                  <SectionComponent />
+                  <h1>Basic Components</h1>
                 </div>
               )}
             </div>
