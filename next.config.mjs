@@ -6,14 +6,6 @@ const millionConfig = {
 }
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  // reactStrictMode: true,
-  transpilePackages: ["@lexical/react"],
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-}
-
-// export default nextConfig
+const nextConfig = {}
 
 export default million.next(nextConfig, millionConfig)

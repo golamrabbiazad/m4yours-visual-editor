@@ -26,7 +26,7 @@ export async function AuthenticationButton() {
           href="/auth/signin"
           className="flex items-center gap-2 text-sm font-semibold leading-6 text-white"
         >
-          Log in <LogIn className="h-4 w-4" />
+          Log in <LogIn className="size-4" />
         </Link>
       ) : (
         <DropdownMenu>
@@ -45,19 +45,19 @@ export async function AuthenticationButton() {
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               <DropdownMenuItem>
-                <UserIcon className="mr-2 h-4 w-4" />
+                <UserIcon className="mr-2 size-4" />
                 <span>Profile</span>
                 <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <Settings className="mr-2 h-4 w-4" />
+                <Settings className="mr-2 size-4" />
                 <span>Settings</span>
                 <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuItem>
-              <LogOut className="mr-2 h-4 w-4" />
+              <LogOut className="mr-2 size-4" />
               <Link href="/auth/signout">
                 <span>Log out</span>
               </Link>
