@@ -13,8 +13,8 @@
     "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
     "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache",
     "pages:build": "npx @cloudflare/next-on-pages",
-    "preview": "npm pages:build && wrangler pages dev .vercel/output/static",
-    "deploy": "npm pages:build && wrangler pages deploy .vercel/output/static"
+    "preview": "npm run pages:build && wrangler pages dev .vercel/output/static",
+    "deploy": "npm run pages:build && wrangler pages deploy .vercel/output/static"
   },
   "dependencies": {
     "@auth/d1-adapter": "0.7.0",

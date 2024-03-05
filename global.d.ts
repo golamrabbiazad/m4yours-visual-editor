@@ -18,5 +18,6 @@ declare namespace NodeJS {
     STAGING?: string
     NEXT_PUBLIC_ALGOLIA_APP_ID: string
     NEXT_PUBLIC_ALGOLIA_API_KEY: string
+    DB: D1Database
   }
 }
