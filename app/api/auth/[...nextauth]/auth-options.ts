@@ -1,13 +1,9 @@
-import { D1Adapter } from "@auth/d1-adapter"
+import { D1Adapter, up } from "@auth/d1-adapter"
 import { NextAuthConfig } from "next-auth"
 import GoogleProvider from "next-auth/providers/google"
 
-const env = {
-  DB: D1Database
-}
-
 export const authOptions: NextAuthConfig = {
-  adapter: D1Adapter(env.DB),
+  adapter: D1Adapter(process.env.DB),
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,

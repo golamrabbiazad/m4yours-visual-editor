@@ -3,6 +3,8 @@ import { getRequestContext } from '@cloudflare/next-on-pages'
 
 export const runtime = 'edge'
 
+const db = process.env.DB;
+
 export async function GET(request: NextRequest) {
   let responseText = 'Hello World'
 
@@ -18,5 +20,11 @@ export async function GET(request: NextRequest) {
   // const suffix = await myKv.get('suffix')
   // responseText += suffix
 
-  return new Response(responseText)
+  const stmt = db.prepare(`select * from users`)
+
+  const results = await stmt.all();
+
+  const data = results.results
+
+  return new Response(JSON.stringify(data))
 }

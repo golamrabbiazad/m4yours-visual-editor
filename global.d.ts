@@ -16,5 +16,7 @@ declare namespace NodeJS {
     RESEND_API_KEY: string
     EDGE_CONFIG: string
     STAGING?: string
+    DB: D1Database
   }
 }
+
