@@ -1,10 +1,9 @@
-import { env } from "node:process"
 import { D1Adapter } from "@auth/d1-adapter"
 import { NextAuthConfig } from "next-auth"
 import GoogleProvider from "next-auth/providers/google"
 
 export const authOptions: NextAuthConfig = {
-  adapter: D1Adapter(env.DB),
+  adapter: D1Adapter(process.env.DB),
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
@@ -15,6 +14,7 @@ export const authOptions: NextAuthConfig = {
     strategy: "jwt",
   },
   trustHost: true,
+  secret: process.env.AUTH_SECRET,
   pages: {
     signIn: "/auth/signin",
     signOut: "/auth/signout",
