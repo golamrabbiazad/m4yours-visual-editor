@@ -1,5 +1,5 @@
 name = "m4yours-visual-editor"
-compatibility_date = "2024-03-05"
+compatibility_date = "2024-03-07"
 
 compatibility_flags = ["nodejs_compat"]
 
